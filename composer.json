@@ -1,0 +1,17 @@
+{
+  "name": "pimpops/php-di-container",
+  "authors": [
+    {
+      "name": "Andrii Pereverziev",
+      "email": "pereverziev.andrii@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload" : {
+    "psr-4": {
+      "Core\\": "core",
+      "Site\\": "site",
+      "Admin\\": "admin"
+    }
+  }
+}
