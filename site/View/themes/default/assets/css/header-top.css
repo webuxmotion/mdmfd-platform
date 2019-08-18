@@ -1,0 +1,46 @@
+.header-top__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  box-sizing: border-box; 
+}
+.header-top__profile-label {
+  width: 50px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 50px;
+  display: block;
+  cursor: pointer;
+}
+
+.header-top__profile-dropdown {
+  display: none;
+}
+
+.header-top__input:checked + .header-top__profile-dropdown {
+  display: block; 
+}
+
+.header-top__profile {
+  position: relative;
+}
+
+.header-top__profile-dropdown {
+  position: absolute;
+}
+
+.header-top__switcher {
+  display: flex;
+}
+.header-top__switcher-control {
+  border: 1px solid transparent;  
+  padding: 10px;
+  border-radius: 20px;
+}
+.header-top__switcher-control.is-active {
+  border-color: black;
+  color: black;
+}

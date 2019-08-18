@@ -52,3 +52,17 @@
 .form__footer-link--gray {
     color: gray;
 }
+
+.form__color-items {
+  display: flex;
+}
+
+.form__color-item {
+  padding: 0 4px;
+}
+
+.form__color-item-preview {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+}

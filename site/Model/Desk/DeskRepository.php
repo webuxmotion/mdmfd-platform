@@ -10,9 +10,20 @@ class DeskRepository extends Model {
         $sql = $this->queryBuilder->select()
             ->from('desk')
             ->where('user_id', $user_id)
-            ->orderBy('id', 'ASC')
+            ->orderBy('id', 'DESC')
             ->sql();
         return $this->db->query($sql, $this->queryBuilder->values);
+    }
+
+    public function getDesk($segment, $user_id) {
+        $sql = $this->queryBuilder->select()
+            ->from('desk')
+            ->where('segment', $segment)
+            ->where('user_id', $user_id)
+            ->limit(1)
+            ->sql();
+        $result = $this->db->query($sql, $this->queryBuilder->values);
+        return isset($result[0]) ? $result[0] : false;
     }
 
     public function add($params) {

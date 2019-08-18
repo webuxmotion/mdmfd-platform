@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: moe-mysql-app: 3306
--- Generation Time: Aug 17, 2019 at 07:23 PM
+-- Generation Time: Aug 18, 2019 at 03:12 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.2
 
@@ -40,12 +40,8 @@ CREATE TABLE `desk` (
 --
 
 INSERT INTO `desk` (`id`, `user_id`, `name`, `segment`) VALUES
-(54, 1, 'a', 'a'),
-(55, 1, 'a', 'a-1'),
-(56, 1, 'a', 'a-2'),
-(57, 1, 'df', 'df'),
-(58, 1, 'dddd', 'dddd'),
-(59, 1, 'dddd', 'dddd-1');
+(74, 2, 'Notes', 'notes'),
+(75, 2, 'Work', 'work');
 
 -- --------------------------------------------------------
 
@@ -106,8 +102,10 @@ INSERT INTO `menu_item` (`id`, `menu_id`, `name`, `link`, `parent`, `position`) 
 CREATE TABLE `page` (
   `id` int(11) NOT NULL,
   `desk_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `link` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT '/#',
+  `color` varchar(155) NOT NULL,
   `content` text NOT NULL,
   `segment` varchar(255) NOT NULL,
   `type` varchar(155) NOT NULL DEFAULT 'page',
@@ -119,10 +117,9 @@ CREATE TABLE `page` (
 -- Dumping data for table `page`
 --
 
-INSERT INTO `page` (`id`, `desk_id`, `title`, `link`, `content`, `segment`, `type`, `status`, `date`) VALUES
-(10, 0, 'dddsdf', NULL, '<p>â€‹eee</p>', 'page', 'page', 'publish', '2019-08-17 08:43:18'),
-(11, 0, 'My new page', NULL, '<p>sdfsdfâ€‹</p>', 'my-new-page', 'page', 'publish', '2019-08-17 09:40:20'),
-(12, 0, 'My new page', NULL, '<p>â€‹</p>', 'my-new-page', 'page', 'draft', '2019-08-17 09:41:10');
+INSERT INTO `page` (`id`, `desk_id`, `user_id`, `title`, `link`, `color`, `content`, `segment`, `type`, `status`, `date`) VALUES
+(20, 74, 2, 'array length php', '', '#18abd5', 'content', 'array-length-php', 'page', 'publish', '2019-08-18 15:07:29'),
+(21, 75, 2, 'Land Manager', '', '#18abd5', '<p><strong data-redactor-tag=\"strong\" data-verified=\"redactor\">cd Projects/lams-core-v1.0/LAMS/LAMS.WebUI/wwwroot/src </strong><span class=\"redactor-invisible-space\" data-verified=\"redactor\" data-redactor-tag=\"span\" data-redactor-class=\"redactor-invisible-space\"><strong data-redactor-tag=\"strong\" data-verified=\"redactor\">â€‹â€‹</strong></span></p><p><span class=\"redactor-invisible-space\" data-verified=\"redactor\" data-redactor-tag=\"span\" data-redactor-class=\"redactor-invisible-space\"><strong data-redactor-tag=\"strong\" data-verified=\"redactor\"><a href=\"https://gitlab.com/agrichain-lams/lams-core-v1.0\">https://gitlab.com/agrichain-lams/lams-core-v1.0</a><span class=\"redactor-invisible-space\">â€‹</span><br></strong></span></p>', 'land-manager', 'undefined', 'undefined', '2019-08-18 15:08:41');
 
 -- --------------------------------------------------------
 
@@ -163,8 +160,8 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `name`, `key_field`, `value`, `section`) VALUES
-(1, 'Name site', 'name_site', 'Invest Eleven', 'general'),
-(2, 'Description', 'description', 'Site about private investments', 'general'),
+(1, 'Name site', 'name_site', 'MDMFD', 'general'),
+(2, 'Description', 'description', 'Link Actualizing Platform', 'general'),
 (3, 'Admin email', 'admin_email', 'admin@admin.com', 'general'),
 (4, 'Language', 'language', 'english', 'general'),
 (5, 'Active theme', 'active_theme', 'default', 'theme');
@@ -189,8 +186,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
-(1, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '71f163c8a50f721d6b71a04c67cfe703', '2019-04-16 18:16:33'),
-(2, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'b5967b550950df6fb0c48f02ebeff27a', '2019-04-20 14:28:25'),
+(1, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '83df6a1351a106570b163c13e2b7431f', '2019-04-16 18:16:33'),
+(2, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'e740fa757ba43888f7587423feed617c', '2019-04-20 14:28:25'),
 (3, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:25'),
 (4, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:26'),
 (5, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:26'),
@@ -254,7 +251,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `desk`
 --
 ALTER TABLE `desk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -272,7 +269,7 @@ ALTER TABLE `menu_item`
 -- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `plugin`

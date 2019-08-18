@@ -55,13 +55,15 @@ class QueryBuilder {
     public function set($data = []) {
         $this->sql['set'] = '';
         $this->sql['set'] .= "SET ";
+        $counter = 1;
         if(!empty($data)) {
             foreach ($data as $key => $value) {
                 $this->sql['set'] .= "{$key} = ? ";
-                if (next($data)) {
+                if ($counter != count($data)) {
                     $this->sql['set'] .= ", ";
                 }
                 $this->values[]    = $value;
+                $counter++;
             }
         }
         return $this;

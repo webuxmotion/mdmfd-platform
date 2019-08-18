@@ -70,7 +70,7 @@ class PageController extends AdminController {
     $params = $this->request->post;
     $this->load->model('Page');
     if (isset($params['title'])) {
-      $pageId = $this->model->page->createPage($params);
+      $pageId = $this->model->page->create($params);
       echo $pageId;
     }
   }

@@ -11,24 +11,45 @@ class Page {
     protected $table = 'page';
     public $id;
     public $title;
+    public $link;
+    public $color;
     public $content;
+    public $desk_id;
+    public $user_id;
     public $segment;
     public $type;
     public $status;
     public $date;
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
+
+    public function getId() {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getDeskId()
+    {
+        return $this->desk_id;
+    }
+
+    public function setDeskId($desk_id)
+    {
+        $this->desk_id = $desk_id;
+    }
+
+    public function getUserId()
+    {
+        return $this->user_id;
     }
     /**
      * @param mixed $id
      */
-    public function setId($id)
+    public function setUserId($user_id)
     {
-        $this->id = $id;
+        $this->user_id = $user_id;
     }
     /**
      * @return mixed
@@ -43,6 +64,24 @@ class Page {
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+    
+    public function getLink()
+    {
+        return $this->link;
+    }
+    public function setLink($link)
+    {
+        $this->link = $link;
+    }
+
+    public function getColor()
+    {
+        return $this->color;
+    }
+    public function setColor($color)
+    {
+        $this->color = $color;
     }
     /**
      * @return mixed

@@ -26,4 +26,30 @@ class PageController extends SiteController {
         Page::setStore($page);
         $this->view->render($template);
     }
+
+    public function create() {
+
+      $params = $this->request->post;
+
+      $this->load->model('Page', false, 'Admin');
+
+      $pageId = $this->model->page->create($params);
+
+      if (isset($params['redirect'])) {
+          header('Location: ' . $params['redirect']);
+          exit;
+      }
+      echo $pageId;
+
+    }
+
+  public function update() {
+
+    $params = $this->request->post;
+
+    $this->load->model('Page', false, 'Admin');
+
+    $pageId = $this->model->page->updatePage($params);
+    echo $pageId;
+  }
 }
