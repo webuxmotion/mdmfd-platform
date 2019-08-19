@@ -10,7 +10,11 @@
 <?php if (isset($page)): ?>
 <div class="desk-page">
   <div class="desk-page__container">
-    <div class="desk-page__title"><a href="/<?=$desk->segment?>"><?=$desk->name?></a></div>
+    <div class="desk-page__title">
+      <a href="/">MyDesks</a> -> 
+      <a href="/<?=$desk->segment?>"><?=$desk->name?></a> ->
+      <?= $page->title ?>
+    </div>
     <div class="desk-page__content g-pt-30">
 
       <form id="formPage">
@@ -51,27 +55,29 @@
 <?php if (isset($pages)) : ?>
 <div class="desk-page">
   <div class="desk-page__container">
-    <div class="desk-page__title"><?=$desk->name?></div>
+    <div class="desk-page__title"><a href="/">MyDesks</a> -> <?=$desk->name?></div>
     <div class="desk-page__content">
       <div class="desk-page__page-item">
           <!-- page-card -->
-          <div class="page-card">
+          <div class="page-card page-card--add-container">
             <div class="page-card__content">
-              <form action="/page/create/" method="POST" class="page-card__form">
-                  <input type="hidden" name="redirect" value="/<?=$desk->segment?>">
-                  <input type="hidden" name="user_id" value="<?=$user_id?>">
-                  <input type="hidden" name="desk_id" value="<?=$desk->id?>">
-                  <input type="hidden" name="color" value="#18abd5">
-                  <div>
-                    <label>Title</label>
-                    <input type="text" name="title" required>
-                  </div>
-                  <div>
-                    <label>Link</label>
-                    <input type="text" name="link">
-                  </div>
-                  <button class="desk-card__submit-button">+ Add item</button>
-              </form>
+              <div class="page-card__add-form-wrap">
+                <form action="/page/create/" method="POST" class="page-card__form">
+                    <input type="hidden" name="redirect" value="/<?=$desk->segment?>">
+                    <input type="hidden" name="user_id" value="<?=$user_id?>">
+                    <input type="hidden" name="desk_id" value="<?=$desk->id?>">
+                    <input type="hidden" name="color" value="#18abd5">
+                    <div>
+                      <label>Title</label>
+                      <input type="text" name="title" required>
+                    </div>
+                    <div>
+                      <label>Link</label>
+                      <input type="text" name="link">
+                    </div>
+                    <button class="desk-card__submit-button">+ Add item</button>
+                </form>
+              </div>
             </div>
           </div>
           <!-- END page-card -->

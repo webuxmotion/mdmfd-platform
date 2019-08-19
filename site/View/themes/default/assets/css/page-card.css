@@ -50,3 +50,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.page-card--add-container {
+  border: 2px dashed grey;
+}
+.page-card__add-form-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
