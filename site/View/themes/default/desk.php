@@ -27,6 +27,9 @@
               <label>Link</label>
               <input type="text" name="link" class="form-control" id="formLink" value="<?= $page->link ?>" placeholder="Link...">
           </div>
+          <button type="submit" class="desk-card__submit-button" onclick="page.update(this);return false;">
+              Save
+          </button>
           <div class="field">
               <label>Color</label>
               <div class="form__color-items">
@@ -42,9 +45,6 @@
               <label>Content</label>
               <textarea name="content" id="redactor"><?= $page->content ?></textarea>
           </div>
-          <button type="submit" class="ui primary button" onclick="page.update(this);return false;">
-              Save
-          </button>
       </form>
 
     </div>
