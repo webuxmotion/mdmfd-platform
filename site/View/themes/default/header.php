@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" type="image/png" href="<?=Asset::getUrl()?>img/favicon.png" />
+
     <title><?php Theme::title(); ?></title>
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">

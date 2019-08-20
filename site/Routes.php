@@ -8,4 +8,5 @@
 
   $this->router->add('page-update', '/page/update/', 'PageController:update', 'POST');
   $this->router->add('page-create', '/page/create/', 'PageController:create', 'POST');
+  $this->router->add('page-delete', '/page/delete/', 'PageController:delete', 'POST');
 ?>

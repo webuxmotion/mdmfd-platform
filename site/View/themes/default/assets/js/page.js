@@ -78,4 +78,32 @@ var page = {
             }
         });
     }, 
+    remove: function(id) {
+
+      if(!confirm('Delete the page?')) {
+          return false;
+      }
+
+      var formData = new FormData();
+
+      formData.append('id', id);
+
+      if (id < 1) {
+          return false;
+      }
+
+      $.ajax({
+          url: '/page/delete/',
+          type: this.ajaxMethod,
+          data: formData,
+          processData: false,
+          contentType: false,
+          beforeSend: function(){
+
+          },
+          success: function(result){
+              $('.js-page-' + id).remove();
+          }
+      });
+  }
 };

@@ -52,4 +52,14 @@ class PageController extends SiteController {
     $pageId = $this->model->page->updatePage($params);
     echo $pageId;
   }
+
+  public function delete() {
+
+    $params = $this->request->post;
+
+    $this->load->model('Page', false, 'Admin');
+
+    $pageId = $this->model->page->delete($params);
+    echo $pageId;
+  }
 }
