@@ -41,5 +41,20 @@ class DeskController extends SiteController {
     $this->view->render('desk', $data);
   }
 
+  public function edit($slug) {
+    $user_id = $this->data['user']->id;
+    $data['slug'] = $slug;
+    $this->load->model('Desk');
+    $data['desk'] = $this->model->desk->getDesk($slug, $user_id);
+
+    $this->view->render('desk/edit', $data);
+  }
+
+  public function update() {
+    $params = $this->request->post;
+    $this->load->model('Desk');
+    $this->model->desk->update($params);
+  }
+
 }
 ?>

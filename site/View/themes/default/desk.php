@@ -20,12 +20,27 @@
       <form id="formPage">
           <input type="hidden" name="page_id" id="formPageId" value="<?= $page->id ?>" />
           <div class="field">
-              <label>Title</label>
-              <input type="text" name="title" class="form-control" id="formTitle" value="<?= $page->title ?>" placeholder="Title page...">
+              <div class="field__row">
+                <label>Title</label>
+              </div>
+              <div class="field__row">
+                <input type="text" name="title" class="form-control" id="formTitle" value="<?= $page->title ?>" placeholder="Title page...">
+              </div>
           </div>
           <div class="field">
-              <label>Link</label>
-              <input type="text" name="link" class="form-control" id="formLink" value="<?= $page->link ?>" placeholder="Link...">
+              <div class="field__row">
+                <label>Link</label>
+              </div>
+              <div class="field__row">
+                <div class="field__cell">
+                  <input type="text" name="link" class="form-control" id="formLink" value="<?= $page->link ?>" placeholder="Link...">
+                </div>
+                <div class="field__cell">
+                  <a href="<?= $page->link ?>" target="_blank">
+                     link 
+                  </a>
+                </div>
+              </div>
           </div>
           <button type="submit" class="desk-card__submit-button" onclick="page.update(this);return false;">
               Save
@@ -55,7 +70,12 @@
 <?php if (isset($pages)) : ?>
 <div class="desk-page">
   <div class="desk-page__container">
-    <div class="desk-page__title"><a href="/">MyDesks</a> -> <?=$desk->name?></div>
+    <div class="desk-page__title">
+        <a href="/">MyDesks</a> -> <?=$desk->name?>
+
+      <a href="/desk/edit/<?=$desk->segment?>">Edit</a>
+    </div>
+
     <div class="desk-page__content">
       <div class="desk-page__page-item">
           <!-- page-card -->
