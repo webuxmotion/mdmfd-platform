@@ -10,7 +10,7 @@ class View {
 
   public $di;
 
-  protected $theme;
+  public $theme;
   protected $setting;
   protected $menu;
 

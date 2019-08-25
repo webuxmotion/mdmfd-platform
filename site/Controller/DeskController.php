@@ -28,6 +28,7 @@ class DeskController extends SiteController {
 
     $user_id = $this->data['user']->id;
     $data['desk'] = $this->model->desk->getDesk($segment, $user_id);
+    $data['desks'] = $this->model->desk->getDesksByUserId($user_id);
     $data['user_id'] = $user_id;
     $desk_id = $data['desk']->id;
 
@@ -46,6 +47,7 @@ class DeskController extends SiteController {
     $data['slug'] = $slug;
     $this->load->model('Desk');
     $data['desk'] = $this->model->desk->getDesk($slug, $user_id);
+    $data['desks'] = $this->model->desk->getDesksByUserId($user_id);
 
     $this->view->render('desk/edit', $data);
   }

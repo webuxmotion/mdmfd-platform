@@ -1,5 +1,5 @@
-.desk-card {
-  border-radius: 6px;
+.desk-card.is-active {
+  background-color: white;
 }
 
 .desk-card__link {
@@ -7,22 +7,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80px;
-  border-radius: inherit;
-  border: 1px solid grey;
   color: black;
   font-size: 20px;
   text-decoration: none;
 }
 
 .desk-card__form-wrap {
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 80px;
   border-radius: inherit;
-  border: 2px dashed grey;
   color: black;
   font-size: 20px;
   text-decoration: none;
@@ -34,7 +29,7 @@
 }
 
 .desk-card__link:hover {
-  background-color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .desk-card__submit-button {
@@ -54,4 +49,11 @@
     border: none;
     color: white;
     margin-top: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .desk-card__link {
+    padding: 5px;
+    font-size: 12px;
+  }
 }

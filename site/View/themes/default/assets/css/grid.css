@@ -1,0 +1,34 @@
+.grid {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    padding-left: 300px;
+    box-sizing: border-box;
+}
+
+.grid__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.grid__content {
+    flex-grow: 1;
+    position: relative;
+}
+
+.grid__content-scrollable {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .grid {
+        padding-left: 100px;
+    }
+}
