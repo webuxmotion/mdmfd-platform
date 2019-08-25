@@ -10,9 +10,9 @@ class SiteController extends Controller {
   protected $auth;
   public $data;
 
-  public function __construct($di) {
+  public function __construct($route, $di) {
 
-    parent::__construct($di);
+    parent::__construct($route, $di);
 
     $this->auth = new Auth($di);
 

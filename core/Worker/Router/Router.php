@@ -1,40 +1,80 @@
 <?php
 
-namespace Core\Worker\Router;
+namespace Core\Worker\Router; 
 
 class Router {
 
-  private $routes = [];
-  private $dispatcher;
-  private $host;
+  protected static $routes = [];
+  protected static $route = [];
 
-  public function __construct($host) {
-    $this->host = $host;
+  public static function add($regexp, $route = []) {
+    self::$routes[$regexp] = $route; 
   }
 
-  public function add($key, $pattern, $controller, $method = 'GET') {
-    $this->routes[$key] = [
-      'pattern' => $pattern,
-      'controller' => $controller,
-      'method' => $method
-    ]; 
+  public static function getRoutes() {
+    return self::$routes;
   }
 
-  public function dispatch($method, $uri) {
-    return $this->getDispatcher()->dispatch($method, $uri); 
+  public static function getRoute() {
+    return self::$route;
   }
 
-  public function getDispatcher() {
-    if ($this->dispatcher == null) {
-      $this->dispatcher = new UrlDispatcher(); 
-
-      foreach ($this->routes as $route) {
-        $this->dispatcher->register($route['method'], $route['pattern'], $route['controller']);
+  public static function dispatch($url, $di) {
+    if (self::matchRoute($url)) {
+      $controller = ENV . '\controller\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
+      if (class_exists($controller)) {
+        $controllerObject = new $controller(self::$route, $di);
+        $action = self::$route['action']; 
+        $action = self::lowerCamelCase($action) . 'Action';
+        if (method_exists($controllerObject, $action)) {
+          $controllerObject->$action();
+        } else {
+        throw new \Exception("Method <b>$controller::$action</b> did not found!", 404);
+        }
+      } else {
+        throw new \Exception("Controller <b>$controller</b> did not found!", 404);
       }
-    } 
+    } else {
+      throw new \Exception('Page not found', 404);
+    }
+  }
 
-    return $this->dispatcher;
+  public static function matchRoute($url) {
+    foreach (self::$routes as $pattern => $route) {
+      if (preg_match("#{$pattern}#", $url, $matches)) {
+        foreach ($matches as $k => $v) {
+          if (is_string($k)) {
+            $route[$k] = $v;
+          }
+        }
+        if (empty($route['action'])) {
+          $route['action'] = 'index';
+        }
+        if (!isset($route['prefix'])) {
+          $route['prefix'] = '';
+        } else {
+          $route['prefix'] .= '\\';
+        }
+        $route['controller'] = self::upperCamelCase($route['controller']);
+
+        self::$route = $route;
+
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  protected static function upperCamelCase($name) {
+    $name = str_replace('-', ' ', $name);
+    $name = ucwords($name);
+    $name = str_replace(' ', '', $name);
+
+    return $name;
+  }
+
+  protected static function lowerCamelCase($name) {
+    return lcfirst(self::upperCamelCase($name));
   }
 }
-
-?>
