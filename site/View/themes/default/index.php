@@ -10,6 +10,9 @@
 
   </div>
   <div class="grid__content">
+    <?php 
+      $this->theme->block('shared/profile-button');
+    ?>
     <div class="grid__content-scrollable">
       <p>Hello! This is MyDesks App</p>
     </div>

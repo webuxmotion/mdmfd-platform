@@ -11,6 +11,7 @@ Asset::css('css/desk-page');
 Asset::css('css/page-card');
 Asset::css('css/field');
 Asset::css('css/logo');
+Asset::css('css/profile-button');
 Asset::css('js/plugins/redactor/redactor');
 
 Asset::css('css/sidebar');

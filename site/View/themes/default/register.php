@@ -16,29 +16,20 @@
             <p class="hero__description">Link Actualizing Platform</p>
         </div>
         <div class="hero__row">
-            <?php if (isset($_SESSION['registeredStatus'])) :?>
-                <?php if ($_SESSION['registeredStatus'] !== 0) :?>
-                    <h2 class="hero__registered-status-message">
-                        Congratulation!<br>Please, login now!
-                    </h2>
-                <?php unset($_SESSION['registeredStatus']); endif; ?>
-            <?php endif; ?>
-            <form class="form form--login" role="form" method="POST" action="/authenticate/">
+            <form class="form form--login" role="form" method="POST" action="/register/">
                 <div class="form__row">
                     <input type="email" name="email" class="form__input" placeholder="Email" required autofocus>
+                    <?=isset($emailErrorMessage) ? $emailErrorMessage : ''?>
                 </div>
                 <div class="form__row">
                     <input type="password" name="password" class="form__input" placeholder="Password" required>
                 </div>
                 <div class="form__row">
-                    <button class="button form__submit-button" type="submit">Login</button>
+                    <button class="button form__submit-button" type="submit">Register</button>
                 </div>
                 <div class="form__row form__row--footer-links">
                     <div class="form__footer-link-wrap">
-                        <a href="/register/" class="form__footer-link">Register</a>
-                    </div>
-                    <div class="form__footer-link-wrap">
-                        <a href="/restore-password/" class="form__footer-link form__footer-link--gray">Forgot password?</a>
+                        <a href="/login/" class="form__footer-link">Login</a>
                     </div>
                 </div>
             </form>

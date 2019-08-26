@@ -38,13 +38,15 @@ class UserRepository extends Model {
     $user->save();
   }
 
-  public function newUser() {
+  public function newUser($params) {
     $user = new User;
-    $user->setEmail('admin2@admin.com');
-    $user->setPassword(md5(2222));
+    $user->setEmail($params['email']);
+    $user->setPassword(md5($params['password']));
     $user->setRole('user');
     $user->setHash('new');
-    $user->save();
+    $id = $user->save();
+    
+    return $id;
   }
 }
 

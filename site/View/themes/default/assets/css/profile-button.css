@@ -1,0 +1,38 @@
+.profile-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.profile-button__control {
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 40px;
+    background-color: #e4e6e9;
+    cursor: pointer;
+}
+.profile-button__control:hover {
+    box-shadow: 0 0 0 2px #ffb902;
+}
+.profile-button__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #e4e6e9;
+    border-radius: 6px;
+    margin-top: 5px;
+    padding: 20px;
+}
+.profile-button__input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+.profile-button.is-active .profile-button__dropdown {
+    display: block;
+}

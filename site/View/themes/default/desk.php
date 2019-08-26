@@ -10,13 +10,15 @@
 
   </div>
   <div class="grid__content">
+    <?php 
+      $this->theme->block('shared/profile-button');
+    ?>
     <div class="grid__content-scrollable">
       
       <?php if (isset($page)): ?>
       <div class="desk-page">
         <div class="desk-page__container">
           <div class="desk-page__title">
-            <a href="/">MyDesks</a> -> 
             <a href="/<?=$desk->segment?>"><?=$desk->name?></a> ->
             <?= $page->title ?>
           </div>

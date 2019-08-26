@@ -26,6 +26,38 @@ class LoginController extends Controller {
     $this->view->render('login');
   }
 
+  public function register() {
+    $this->view->render('register');
+  }
+
+  public function registerUser() {
+
+    $params = $this->request->post;
+
+    $sql = $this->queryBuilder
+      ->select()
+      ->from('user')
+      ->where('email', $params['email'])
+      ->where('password', md5($params['password']))
+      ->limit(1)
+      ->sql();
+
+    $query = $this->db->query($sql, $this->queryBuilder->values);
+
+    if (!empty($query)) {
+      $data['emailErrorMessage'] = "This email already using!";
+      $this->view->render('register', $data);
+    } else {
+      $this->load->model('User', false, 'Admin');
+      if ($this->model->user->newUser($params)) {
+        $_SESSION['registeredStatus'] = true;
+        header('Location: /login/');
+        exit;
+      }
+    }
+    
+  }
+
   public function authenticate() {
 
     $params = $this->request->post;

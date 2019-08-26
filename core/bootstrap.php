@@ -15,6 +15,7 @@ use Core\Starter;
 try {
 
   $di = new DI();
+  session_start();
 
   $providers = require __DIR__ . '/Provider/providerList.php';
 
