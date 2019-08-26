@@ -1,13 +1,15 @@
 .sidebar {
     width: 300px;
     height: 100vh;
-    background-color: #ff9c00;
+    background-color: #E4E6E9;
     display: flex;
     flex-direction: column;
 }
 
 .sidebar__header {
     height: 60px;
+    padding-top: 5px;
+    box-sizing: border-box;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;

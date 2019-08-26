@@ -8,7 +8,7 @@
             <form action="/desk/add/" method="POST" class="desk-card__form">
                 <input type="hidden" name="redirect" value="/">
                 <input type="hidden" name="user_id" value="<?=$user_id?>">
-                <input type="text" name="name" required>
+                <input type="text" name="name" placeholder="Your desk name" required>
                 <button class="desk-card__submit-button">+ Add desk</button>
             </form>
           </div>
