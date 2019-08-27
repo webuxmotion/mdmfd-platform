@@ -24,7 +24,7 @@ class DeskController extends SiteController {
     $getParams = $this->request->get;
 
     $this->load->model('Desk');
-    $this->load->model('Page', false, 'Admin');
+    $this->load->model('Page');
 
     $user_id = $this->data['user']->id;
     $data['desk'] = $this->model->desk->getDesk($segment, $user_id);
@@ -59,4 +59,3 @@ class DeskController extends SiteController {
   }
 
 }
-?>

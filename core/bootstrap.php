@@ -5,9 +5,6 @@ require_once __DIR__ . '/Functions.php';
 
 class_alias('Core\\Worker\\Template\\Asset', 'Asset');
 class_alias('Core\\Worker\\Template\\Theme', 'Theme');
-class_alias('Core\\Worker\\Template\\Setting', 'Setting');
-class_alias('Core\\Worker\\Template\\Menu', 'Menu');
-class_alias('Core\\Worker\\Customize\\Customize', 'Customize');
 
 use Core\DI;
 use Core\Starter;

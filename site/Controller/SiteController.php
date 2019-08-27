@@ -21,7 +21,7 @@ class SiteController extends Controller {
       exit;
     }
 
-    $this->load->model('User', false, 'Admin');
+    $this->load->model('User');
     $this->data['user'] = $this->model->user->getUserByHash();
   }
 }

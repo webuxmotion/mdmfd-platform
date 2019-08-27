@@ -2,7 +2,7 @@
 
 namespace Core\Worker\Template;
 
-use Admin\Model\Setting\SettingRepository;
+use Site\Model\Setting\SettingRepository;
 use Core\DI;
 
 class Setting {

@@ -48,7 +48,7 @@ class LoginController extends Controller {
       $data['emailErrorMessage'] = "This email already using!";
       $this->view->render('register', $data);
     } else {
-      $this->load->model('User', false, 'Admin');
+      $this->load->model('User');
       if ($this->model->user->newUser($params)) {
         $_SESSION['registeredStatus'] = true;
         header('Location: /login/');
