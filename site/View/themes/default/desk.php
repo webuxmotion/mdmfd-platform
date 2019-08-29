@@ -111,7 +111,9 @@
                             <label>Link</label>
                             <input type="text" name="link">
                           </div>
-                          <button class="desk-card__submit-button">+ Add item</button>
+                          <div style="text-align: center;">
+                            <button class="desk-card__submit-button">+ Add item</button>
+                          </div>
                       </form>
                     </div>
                   </div>
