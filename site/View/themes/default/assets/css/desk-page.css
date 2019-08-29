@@ -18,12 +18,23 @@
 .desk-page__content {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 20px;
 }
 
 .desk-page__page-item {
-  width: 25%;
-  padding: 10px;
+  width: 200px;
+  padding: 15px;
   box-sizing: border-box;
+}
+
+.desk-page__title-edit-button {
+  display: inline-flex;
+}
+
+.desk-page__title-edit-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #3898e5;
 }
 
 @media (max-width:800px) {
