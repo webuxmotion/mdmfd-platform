@@ -14,6 +14,10 @@ class HomeController extends SiteController {
     $this->view->render('index', $data);
   }
 
+  public function webpackTest() {
+    $this->view->render('webpack-test');
+  }
+
 }
 
 ?>

@@ -1,5 +1,6 @@
 <?php
   $this->router->add('home', '/', 'HomeController:index');
+  $this->router->add('webpack-test', '/webpack-test/', 'HomeController:webpackTest');
   $this->router->add('login', '/login/', 'LoginController:login');
   $this->router->add('register', '/register/', 'LoginController:register');
   $this->router->add('authenticate', '/authenticate/', 'LoginController:authenticate', 'POST');
