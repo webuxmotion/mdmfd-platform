@@ -28,6 +28,8 @@ class Text {
             'Ч' => 'Ch',  'Ш' => 'Sh',  'Щ' => 'Sch',
             'Ь' => '\'',  'Ы' => 'Y',   'Ъ' => '\'',
             'Э' => 'E',   'Ю' => 'Yu',  'Я' => 'Ya',
+            '"' => '',    'і' => 'i',   '\'' => '',
+            'є' => 'e',   'Є' => 'e',
         );
         return str_replace(' ', '-', strtolower(strtr($string, $converter)));
     }
