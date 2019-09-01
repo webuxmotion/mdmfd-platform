@@ -2,6 +2,8 @@
 
 namespace Site\Controller;
 
+//use Core\Worker\Router\Router;
+
 class DeskController extends SiteController {
 
   public function add() {
@@ -19,7 +21,10 @@ class DeskController extends SiteController {
     echo $deskId;
   }
 
-  public function view($segment) {
+  public function view() {
+
+    $segment = $this->route['segment'];
+    $username = $this->route['username'];
 
     $getParams = $this->request->get;
 
@@ -29,6 +34,7 @@ class DeskController extends SiteController {
     $user_id = $this->data['user']->id;
     $data['desk'] = $this->model->desk->getDesk($segment, $user_id);
     $data['user_id'] = $user_id;
+    $data['username'] = $username;
     $desk_id = $data['desk']->id;
 
     if (isset($getParams['page'])) {

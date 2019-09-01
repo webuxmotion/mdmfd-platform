@@ -20,12 +20,14 @@ class Router {
   }
 
   public static function dispatch($url, $di) {
+
     if (self::matchRoute($url)) {
+
       $controller = ENV . '\controller\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
       if (class_exists($controller)) {
         $controllerObject = new $controller(self::$route, $di);
         $action = self::$route['action']; 
-        $action = self::lowerCamelCase($action) . 'Action';
+        $action = self::lowerCamelCase($action);
         if (method_exists($controllerObject, $action)) {
           $controllerObject->$action();
         } else {
