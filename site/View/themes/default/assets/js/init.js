@@ -1,3 +1,19 @@
+var markdownEditor;
+
+$( document ).ready(function() {
+    var editorEl = document.querySelector('#editSection');
+    if (editorEl) {
+        markdownEditor = new tui.Editor({
+            el: document.querySelector('#editSection'),
+            initialEditType: 'markdown',
+            previewStyle: 'vertical',
+            height: '300px'
+        });
+    
+        markdownEditor.setValue( document.querySelector('#editorContent').innerHTML );
+    }
+});
+
 $('#redactor').redactor({
     imageUpload: '/ajax/redactor/core/uploadImage/',
     fileUpload: '/ajax/redactor/core/uploadFile/',
@@ -20,3 +36,4 @@ function initProfileButtonClickHandler() {
         });
     }
 }
+

@@ -6,7 +6,7 @@
         </div>
         <div class="desk-page__content g-pt-30">
 
-        <form id="formPage">
+        <form id="formPage" style="width: 100%;">
             <input type="hidden" name="page_id" id="formPageId" value="<?= $page->id ?>" />
             <div class="field">
                 <div class="field__row">
@@ -48,6 +48,11 @@
             <div class="field">
                 <label>Content</label>
                 <textarea name="content" id="redactor"><?= $page->content ?></textarea>
+            </div>
+            <div class="field">
+                <label>README.md</label>
+                <div id="editSection"></div>
+                <div id="editorContent" style="display: none;"><?= $page->markdown ?></div>
             </div>
         </form>
 

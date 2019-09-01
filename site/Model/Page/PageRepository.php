@@ -77,6 +77,7 @@ class PageRepository extends Model {
         $page->setLink($params['link']);
         $page->setDeskId($params['desk_id']);
         $page->setContent('content');
+        $page->setMarkdown('markdown');
         $page->setStatus('publish');
         $page->setColor($params['color']);
         $page->setSegment(\Core\Helper\Text::transliteration($params['title']));
@@ -131,6 +132,7 @@ class PageRepository extends Model {
             $page->setLink($params['link']);
             $page->setColor($params['color']);
             $page->setContent($params['content']);
+            $page->setMarkdown($params['markdown']);
             $page->setStatus($params['status']);
             $page->setType($params['type']);
             $page->save();

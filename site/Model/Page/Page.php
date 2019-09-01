@@ -14,6 +14,7 @@ class Page {
     public $link;
     public $color;
     public $content;
+    public $markdown;
     public $desk_id;
     public $user_id;
     public $segment;
@@ -83,23 +84,23 @@ class Page {
     {
         $this->color = $color;
     }
-    /**
-     * @return mixed
-     */
-    public function getContent()
-    {
+    
+    public function getContent() {
         return $this->content;
     }
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content)
-    {
+    
+    public function setContent($content) {
         $this->content = $content;
     }
-    /**
-     * @return mixed
-     */
+
+    public function getMarkdown() {
+        return $this->markdown;
+    }
+    
+    public function setMarkdown($markdown) {
+        $this->markdown = $markdown;
+    }
+    
     public function getDate()
     {
         return $this->date;

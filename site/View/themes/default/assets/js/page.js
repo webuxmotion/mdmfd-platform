@@ -31,6 +31,7 @@ var page = {
         formData.append('link', $('#formLink').val());
         formData.append('color', $('[name=color]:checked').val());
         formData.append('content', $('.redactor-editor').html());
+        formData.append('markdown', markdownEditor.getMarkdown());
         formData.append('status', $('#status').val());
         formData.append('type', $('#type').val());
 
