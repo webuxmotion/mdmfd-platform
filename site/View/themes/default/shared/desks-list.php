@@ -16,12 +16,16 @@
         <!-- END desk-card -->
     </div>
 
+  
+
     <?php foreach($desks as $item) : ?>
       <?php
         $activeClass = '';
         if (isset($desk)) {
-          if ($desk->segment == $item->segment) {
-            $activeClass = 'is-active';
+          if ($desk !== null) {
+            if ($desk->segment == $item->segment) {
+              $activeClass = 'is-active';
+            }
           }
         }
       ?>
