@@ -14,9 +14,11 @@ abstract class Controller {
   protected $queryBuilder;
   protected $load;
   protected $plugin;
+  protected $route;
 
-  public function __construct(DI $di) {
+  public function __construct($route, DI $di ) {
     $this->di = $di;
+    $this->route = $route;
 
     $this->initVars();
   }

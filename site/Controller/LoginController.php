@@ -10,9 +10,9 @@ class LoginController extends Controller {
 
   protected $auth;
 
-  public function __construct(DI $di) {
+  public function __construct($route, DI $di) {
 
-    parent::__construct($di);
+    parent::__construct($route, $di);
 
     $this->auth = new Auth($di);
 

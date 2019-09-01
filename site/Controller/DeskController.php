@@ -19,7 +19,9 @@ class DeskController extends SiteController {
     echo $deskId;
   }
 
-  public function view($segment) {
+  public function view() {
+
+    $segment = $this->route['segment'];
 
     $getParams = $this->request->get;
 
@@ -42,7 +44,10 @@ class DeskController extends SiteController {
     $this->view->render('desk', $data);
   }
 
-  public function edit($slug) {
+  public function edit() {
+
+    $slug = $this->route['segment'];
+
     $user_id = $this->data['user']->id;
     $data['slug'] = $slug;
     $this->load->model('Desk');
