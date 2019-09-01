@@ -12,7 +12,6 @@ class Starter {
 
   public function __construct($di) {
     $this->di = $di;
-    $this->router = $this->di->get('router');
   }
 
   public function run() {
