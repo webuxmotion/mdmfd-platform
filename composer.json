@@ -10,8 +10,7 @@
   "autoload" : {
     "psr-4": {
       "Core\\": "core",
-      "Site\\": "site",
-      "Admin\\": "admin"
+      "Site\\": "site"
     }
   }
 }

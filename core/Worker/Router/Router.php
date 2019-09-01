@@ -21,7 +21,7 @@ class Router {
     $url = self::removeQueryString($url);
     
     if (self::matchRoute($url)) {
-      $controller = ENV . '\controller\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
+      $controller = ENV . '\Controller\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
       if (class_exists($controller)) {
         $controllerObject = new $controller(self::$route, $di);
         $action = self::$route['action']; 
