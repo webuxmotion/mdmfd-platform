@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: moe-mysql-app: 3306
--- Generation Time: Aug 18, 2019 at 03:12 PM
+-- Generation Time: Sep 01, 2019 at 07:53 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.2
 
@@ -41,7 +41,19 @@ CREATE TABLE `desk` (
 
 INSERT INTO `desk` (`id`, `user_id`, `name`, `segment`) VALUES
 (74, 2, 'Notes', 'notes'),
-(75, 2, 'Work', 'work');
+(75, 2, 'Work', 'work'),
+(76, 1, 'ÐÐ½Ð´Ñ€ÐµÐ¹ ÐŸÐµÑ€ÐµÐ²ÐµÑ€Ð·ÐµÐ²', 'andrey-pereverzev'),
+(77, 1, 'Desk 2', 'desk'),
+(78, 1, 'Some desk', 'new-desk'),
+(79, 1, 'My awesome desk', 'my-awesome-desk'),
+(80, 19, 'Secc', 'new-desk-1'),
+(81, 19, 'First desk', 'new-desk'),
+(82, 19, 'dd', 'dd'),
+(83, 19, 'aaasdf', 'aa'),
+(84, 19, 'kk', 'kk'),
+(85, 19, 'df', 'df'),
+(86, 19, 'aaa', 'aa-1'),
+(87, 19, 'aaaa', 'aaaa');
 
 -- --------------------------------------------------------
 
@@ -107,6 +119,7 @@ CREATE TABLE `page` (
   `link` varchar(255) DEFAULT '/#',
   `color` varchar(155) NOT NULL,
   `content` text NOT NULL,
+  `markdown` text NOT NULL,
   `segment` varchar(255) NOT NULL,
   `type` varchar(155) NOT NULL DEFAULT 'page',
   `status` varchar(155) NOT NULL DEFAULT 'draft',
@@ -117,9 +130,21 @@ CREATE TABLE `page` (
 -- Dumping data for table `page`
 --
 
-INSERT INTO `page` (`id`, `desk_id`, `user_id`, `title`, `link`, `color`, `content`, `segment`, `type`, `status`, `date`) VALUES
-(20, 74, 2, 'array length php', '', '#18abd5', 'content', 'array-length-php', 'page', 'publish', '2019-08-18 15:07:29'),
-(21, 75, 2, 'Land Manager', '', '#18abd5', '<p><strong data-redactor-tag=\"strong\" data-verified=\"redactor\">cd Projects/lams-core-v1.0/LAMS/LAMS.WebUI/wwwroot/src </strong><span class=\"redactor-invisible-space\" data-verified=\"redactor\" data-redactor-tag=\"span\" data-redactor-class=\"redactor-invisible-space\"><strong data-redactor-tag=\"strong\" data-verified=\"redactor\">â€‹â€‹</strong></span></p><p><span class=\"redactor-invisible-space\" data-verified=\"redactor\" data-redactor-tag=\"span\" data-redactor-class=\"redactor-invisible-space\"><strong data-redactor-tag=\"strong\" data-verified=\"redactor\"><a href=\"https://gitlab.com/agrichain-lams/lams-core-v1.0\">https://gitlab.com/agrichain-lams/lams-core-v1.0</a><span class=\"redactor-invisible-space\">â€‹</span><br></strong></span></p>', 'land-manager', 'undefined', 'undefined', '2019-08-18 15:08:41');
+INSERT INTO `page` (`id`, `desk_id`, `user_id`, `title`, `link`, `color`, `content`, `markdown`, `segment`, `type`, `status`, `date`) VALUES
+(20, 74, 2, 'array length php', '', '#18abd5', 'content', '', 'array-length-php', 'page', 'publish', '2019-08-18 15:07:29'),
+(21, 75, 2, 'Land Manager', '', '#18abd5', '<p><strong data-redactor-tag=\"strong\" data-verified=\"redactor\">cd Projects/lams-core-v1.0/LAMS/LAMS.WebUI/wwwroot/src </strong><span class=\"redactor-invisible-space\" data-verified=\"redactor\" data-redactor-tag=\"span\" data-redactor-class=\"redactor-invisible-space\"><strong data-redactor-tag=\"strong\" data-verified=\"redactor\">â€‹â€‹</strong></span></p><p><span class=\"redactor-invisible-space\" data-verified=\"redactor\" data-redactor-tag=\"span\" data-redactor-class=\"redactor-invisible-space\"><strong data-redactor-tag=\"strong\" data-verified=\"redactor\"><a href=\"https://gitlab.com/agrichain-lams/lams-core-v1.0\">https://gitlab.com/agrichain-lams/lams-core-v1.0</a><span class=\"redactor-invisible-space\">â€‹</span><br></strong></span></p>', '', 'land-manager', 'undefined', 'undefined', '2019-08-18 15:08:41'),
+(23, 77, 1, 'df', '', '#18abd5', 'content', '', 'df', 'page', 'publish', '2019-08-25 15:21:28'),
+(26, 81, 19, 'werwersdf', '', 'blue', '<p>content</p>', '', 'dfdf', 'undefined', 'undefined', '2019-08-27 19:53:20'),
+(27, 82, 19, 'dda', 'https://adm.tools/hosting/account/ftpaccess/?accid=150140', 'green', '<p>content</p>', '', 'dd', 'undefined', 'undefined', '2019-08-27 20:00:57'),
+(28, 84, 19, 'kk', '', 'green', '<p>content</p>', '', 'kk', 'undefined', 'undefined', '2019-08-31 22:30:41'),
+(29, 84, 19, 'sdfsdf\"sdfsdf', '', '#18abd5', 'content', '', 'sdfsdfsdfsdf', 'page', 'publish', '2019-08-31 23:18:39'),
+(30, 84, 19, 'df\"\"', '', '#18abd5', 'content', '', 'dfdddd', 'page', 'publish', '2019-08-31 23:19:05'),
+(31, 84, 19, 'abc\"\'', '', '#18abd5', 'content', '', 'abc', 'page', 'publish', '2019-08-31 23:20:46'),
+(32, 84, 19, '\'-\'a', '', '#18abd5', '<p>con</p>', '', '-a', 'undefined', 'undefined', '2019-08-31 23:22:38'),
+(33, 84, 19, '\'-\'a', '', '#18abd5', 'content', '', '-a', 'page', 'publish', '2019-08-31 23:22:54'),
+(34, 83, 19, 'Ð¼Ð¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ñ‡ÐºÐ°', '', '#18abd5', 'content', '', 'moy-kartochka', 'page', 'publish', '2019-09-01 01:34:08'),
+(35, 86, 19, 'ddd', '', '#18abd5', 'content', '', 'ddd', 'page', 'publish', '2019-09-01 14:55:09'),
+(39, 80, 19, 'Work', '', 'blue', '<p>dfdfSome contentâ€‹</p>', '```javascript\nsome test\n```', 'work', 'undefined', 'undefined', '2019-09-01 19:23:51');
 
 -- --------------------------------------------------------
 
@@ -186,14 +211,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
-(1, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '83df6a1351a106570b163c13e2b7431f', '2019-04-16 18:16:33'),
-(2, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'e740fa757ba43888f7587423feed617c', '2019-04-20 14:28:25'),
-(3, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:25'),
-(4, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:26'),
-(5, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:26'),
-(6, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:27'),
-(7, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:27'),
-(8, 'adminNew@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-04-20 14:28:27');
+(19, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '7807e0be0ba9365455fae0949a5b0728', '2019-08-26 14:26:14'),
+(20, 'zvo.agency@gmail.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-08-26 14:26:42');
 
 --
 -- Indexes for dumped tables
@@ -251,7 +270,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `desk`
 --
 ALTER TABLE `desk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -269,7 +288,7 @@ ALTER TABLE `menu_item`
 -- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `plugin`
@@ -287,7 +306,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
