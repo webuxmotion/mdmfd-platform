@@ -1,17 +1,18 @@
 <?php
-  $this->router->add('home', '/', 'HomeController:index');
-  $this->router->add('webpack-test', '/webpack-test/', 'HomeController:webpackTest');
-  $this->router->add('login', '/login/', 'LoginController:login');
-  $this->router->add('register', '/register/', 'LoginController:register');
-  $this->router->add('authenticate', '/authenticate/', 'LoginController:authenticate', 'POST');
-  $this->router->add('register-post', '/register/', 'LoginController:registerUser', 'POST');
-  $this->router->add('logout', '/logout/', 'LogoutController:logout');
-  $this->router->add('desk-view', '/(id:any)', 'DeskController:view');
-  $this->router->add('desk-add', '/desk/add/', 'DeskController:add', 'POST');
-  $this->router->add('edit-desk', '/desk/edit/(slug:any)', 'DeskController:edit');
-  $this->router->add('update-desk', '/desk/update/', 'DeskController:update', 'POST');
+  Router::add('^logout/?$', ['controller' => 'Logout', 'action' => 'logout']);
+  Router::add('^login/?$', ['controller' => 'Login', 'action' => 'login']);
+  Router::add('^authenticate/?$', ['controller' => 'Login', 'action' => 'authenticate']);
+  Router::add('^register/?$', ['controller' => 'Login', 'action' => 'register']);
+  Router::add('^register-user/?$', ['controller' => 'Login', 'action' => 'registerUser']);
 
-  $this->router->add('page-update', '/page/update/', 'PageController:update', 'POST');
-  $this->router->add('page-create', '/page/create/', 'PageController:create', 'POST');
-  $this->router->add('page-delete', '/page/delete/', 'PageController:delete', 'POST');
+  Router::add('^$', ['controller' => 'Home', 'action' => 'index']);
+
+  Router::add('^(?P<segment>[A-Za-z0-9_.-]+)/?$', ['controller' => 'Desk', 'action' => 'view']);
+  Router::add('^desk/edit/?(?P<segment>[A-Za-z0-9_.-]+)/?', ['controller' => 'Desk', 'action' => 'edit']);
+  Router::add('^desk/add/?$', ['controller' => 'Desk', 'action' => 'add']);
+  Router::add('^desk/update/?$', ['controller' => 'Desk', 'action' => 'update']);
+
+  Router::add('^page/update/?$', ['controller' => 'Page', 'action' => 'update']);
+  Router::add('^page/create/?$', ['controller' => 'Page', 'action' => 'create']);
+  Router::add('^page/delete/?$', ['controller' => 'Page', 'action' => 'delete']);
 ?>

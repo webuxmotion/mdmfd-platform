@@ -32,6 +32,13 @@ class Common {
       return false;
   }
 
+  static function getQuery() {
+    $query = $_SERVER['REQUEST_URI'];
+    $query = substr($query, 1);  
+    $query = rtrim($query, '/');
+    return $query;
+  }
+
 }
 
 ?>
