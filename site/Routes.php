@@ -5,6 +5,8 @@
   Router::add('^register/?$', ['controller' => 'Login', 'action' => 'register']);
   Router::add('^register-user/?$', ['controller' => 'Login', 'action' => 'registerUser']);
 
+  Router::add('^profile/?$', ['controller' => 'Profile', 'action' => 'index']);
+
   Router::add('^$', ['controller' => 'Home', 'action' => 'index']);
 
   Router::add('^(?P<segment>[A-Za-z0-9_.-]+)/?$', ['controller' => 'Desk', 'action' => 'view']);

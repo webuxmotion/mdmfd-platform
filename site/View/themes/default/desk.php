@@ -11,7 +11,10 @@
   </div>
   <div class="grid__content">
 
-    <?php $this->theme->block('shared/profile-button'); ?>
+    <?php
+      $data['ctx'] = $this; 
+      $this->theme->block('shared/profile-button', $data);
+    ?>
 
     <div class="grid__content-scrollable">
       

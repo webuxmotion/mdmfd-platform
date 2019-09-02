@@ -10,6 +10,10 @@
 
   </div>
   <div class="grid__content">
+    <?php 
+      $data['ctx'] = $this;
+      $this->theme->block('shared/profile-button', $data);
+    ?>
     <div class="grid__content-scrollable">
       <h2>Edit desk</h2>
       <form method="POST" action="/desk/update/">
