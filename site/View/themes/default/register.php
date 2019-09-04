@@ -16,7 +16,7 @@
             <p class="hero__description">Link Actualizing Platform</p>
         </div>
         <div class="hero__row">
-            <form class="form form--login" role="form" method="POST" action="/register/">
+            <form class="form form--login" role="form" method="POST" action="/register-user/">
                 <div class="form__row">
                     <input type="email" name="email" class="form__input" placeholder="Email" required autofocus>
                     <?=isset($emailErrorMessage) ? $emailErrorMessage : ''?>
