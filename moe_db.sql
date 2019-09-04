@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: moe-mysql-app: 3306
--- Generation Time: Sep 01, 2019 at 07:53 PM
+-- Generation Time: Sep 04, 2019 at 08:47 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.2
 
@@ -53,7 +53,8 @@ INSERT INTO `desk` (`id`, `user_id`, `name`, `segment`) VALUES
 (84, 19, 'kk', 'kk'),
 (85, 19, 'df', 'df'),
 (86, 19, 'aaa', 'aa-1'),
-(87, 19, 'aaaa', 'aaaa');
+(87, 19, 'aaaa', 'aaaa'),
+(88, 21, 'ÐÐ½Ð´Ñ€ÐµÐ¹ ÐŸÐµÑ€ÐµÐ²ÐµÑ€Ð·ÐµÐ²', 'andrey-pereverzev');
 
 -- --------------------------------------------------------
 
@@ -203,6 +204,7 @@ CREATE TABLE `user` (
   `password` varchar(32) NOT NULL,
   `role` enum('admin','moderator','user','') NOT NULL,
   `hash` varchar(32) NOT NULL,
+  `language` varchar(255) NOT NULL DEFAULT 'english',
   `date_reg` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -210,9 +212,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
-(19, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '7807e0be0ba9365455fae0949a5b0728', '2019-08-26 14:26:14'),
-(20, 'zvo.agency@gmail.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-08-26 14:26:42');
+INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `language`, `date_reg`) VALUES
+(19, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '7807e0be0ba9365455fae0949a5b0728', 'english', '2019-08-26 14:26:14'),
+(20, 'zvo.agency@gmail.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', 'english', '2019-08-26 14:26:42'),
+(21, 'r@r.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'fb737ebb203bba81cbe5c2e5c468df83', 'english', '2019-09-04 18:56:48');
 
 --
 -- Indexes for dumped tables
@@ -270,7 +273,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `desk`
 --
 ALTER TABLE `desk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -306,7 +309,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

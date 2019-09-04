@@ -31,6 +31,8 @@ class User {
      * @var User hash
      */
     public $hash;
+
+    public $language;
     /**
      * @var User date_reg
      */
@@ -104,6 +106,16 @@ class User {
     public function setHash($hash)
     {
         $this->hash = $hash;
+    }
+
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    public function setLanguage($language)
+    {
+        $this->language = $language;
     }
     /**
      * @return mixed

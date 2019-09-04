@@ -22,6 +22,7 @@ class SiteController extends Controller {
     }
 
     $this->load->model('User');
+    $this->load->language('sidebar/main');
     $this->data['user'] = $this->model->user->getUserByHash();
   }
 }

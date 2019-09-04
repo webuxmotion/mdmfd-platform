@@ -9,7 +9,7 @@
                 <input type="hidden" name="redirect" value="/">
                 <input type="hidden" name="user_id" value="<?=$user_id?>">
                 <input type="text" name="name" placeholder="Your desk name" required>
-                <button class="desk-card__submit-button">+ Add desk</button>
+                <button class="desk-card__submit-button">+ <?=$lang->sidebarMain['addButton']?></button>
             </form>
           </div>
         </div>

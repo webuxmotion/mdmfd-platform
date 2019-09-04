@@ -45,7 +45,7 @@ class Load {
             self::FILE_MASK_LANGUAGE,
             'english', $path
         );
-        $content = parse_ini_file($file, true);
+        $content = parse_ini_file(ENV . DS . $file, true);
         // Set to DI
         $languageName = $this->toCamelCase($path);
         $language = $this->di->get('language') ?: new \stdClass();
