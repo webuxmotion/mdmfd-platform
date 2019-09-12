@@ -1,4 +1,11 @@
 <?php
+  
+  Router::add('^(?P<username>[A-Za-z_.-]+)/?$', ['controller' => 'Desk', 'action' => 'showAll']);
+
+  Router::add('^(?P<username>[A-Za-z_.-]+)/?my-friends-desks/?$', ['controller' => 'Desk', 'action' => 'showMyFriends']);
+
+  Router::add('^(?P<username>[A-Za-z_.-]+)/?global-desks/?$', ['controller' => 'Desk', 'action' => 'showGlobalDesks']);
+
   Router::add('^logout/?$', ['controller' => 'Logout', 'action' => 'logout']);
   Router::add('^login/?$', ['controller' => 'Login', 'action' => 'login']);
   Router::add('^authenticate/?$', ['controller' => 'Login', 'action' => 'authenticate']);

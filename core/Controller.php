@@ -15,6 +15,7 @@ abstract class Controller {
   protected $load;
   protected $plugin;
   protected $route;
+  protected $data;
 
   public function __construct($route, DI $di ) {
     $this->di = $di;

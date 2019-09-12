@@ -1,0 +1,1 @@
+user <b><?=$username?></b> not exists

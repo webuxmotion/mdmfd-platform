@@ -8,7 +8,6 @@ use Core\Worker\Auth\Auth;
 class SiteController extends Controller {
 
   protected $auth;
-  public $data;
 
   public function __construct($route, $di) {
 

@@ -4,6 +4,57 @@ namespace Site\Controller;
 
 class DeskController extends SiteController {
 
+  public function showAll() {
+    $username = $this->route['username'];
+    $userFromDB = $this->data['user'];
+
+    $data['username'] = $username;  
+
+    if ($username !== $userFromDB->username) {
+      $this->view->render('pages/user-not-exists', $data);
+    } else {
+
+      $this->load->model('Desk');
+
+      $data['user'] = $this->data['user'];
+      $data['desks'] = $this->model->desk->getDesksByUserId($data['user']->id);
+      
+      $this->view->render('pages/desks-all', $data);
+    }
+  }
+
+  public function showMyFriends() {
+    $username = $this->route['username'];
+    $userFromDB = $this->data['user'];
+
+    $data['username'] = $username;  
+
+    if ($username !== $userFromDB->username) {
+      $this->view->render('pages/user-not-exists', $data);
+    } else {
+
+      $data['user'] = $this->data['user'];
+      
+      $this->view->render('pages/my-friends', $data);
+    }
+  }
+
+  public function showGlobalDesks() {
+    $username = $this->route['username'];
+    $userFromDB = $this->data['user'];
+
+    $data['username'] = $username;  
+
+    if ($username !== $userFromDB->username) {
+      $this->view->render('pages/user-not-exists', $data);
+    } else {
+
+      $data['user'] = $this->data['user'];
+      
+      $this->view->render('pages/global-desks', $data);
+    }
+  }
+
   public function add() {
 
     $params = $this->request->post;

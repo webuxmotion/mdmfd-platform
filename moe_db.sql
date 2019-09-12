@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: moe-mysql-app: 3306
--- Generation Time: Sep 01, 2019 at 07:53 PM
+-- Generation Time: Sep 12, 2019 at 07:51 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.2
 
@@ -199,6 +199,7 @@ INSERT INTO `setting` (`id`, `name`, `key_field`, `value`, `section`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(32) NOT NULL,
   `role` enum('admin','moderator','user','') NOT NULL,
@@ -210,9 +211,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
-(19, 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '7807e0be0ba9365455fae0949a5b0728', '2019-08-26 14:26:14'),
-(20, 'zvo.agency@gmail.com', 'b59c67bf196a4758191e42f76670ceba', 'user', 'new', '2019-08-26 14:26:42');
+INSERT INTO `user` (`id`, `username`, `email`, `password`, `role`, `hash`, `date_reg`) VALUES
+(19, 'webuxmotion', 'admin@admin.com', 'b59c67bf196a4758191e42f76670ceba', 'user', '4e461d0afb639b868ca007a5878cf83d', '2019-08-26 14:26:14');
 
 --
 -- Indexes for dumped tables
@@ -260,7 +260,8 @@ ALTER TABLE `setting`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
