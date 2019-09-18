@@ -23,6 +23,70 @@ class DeskController extends SiteController {
     }
   }
 
+  public function showDesk() {
+    $username = $this->route['username'];
+    $deskSegment = $this->route['segment'];
+    $userFromDB = $this->data['user'];
+
+    $data['username'] = $username;  
+
+    if ($username !== $userFromDB->username) {
+      $this->view->render('pages/user-not-exists', $data);
+    } else {
+      $this->load->model('Desk');
+      $this->load->model('Page');
+
+      $data['user'] = $this->data['user'];
+      $user_id = $data['user']->id;
+      $data['desks'] = $this->model->desk->getDesksByUserId($user_id);
+      $data['desk'] = $this->model->desk->getDesk($deskSegment, $user_id);
+      $data['segment'] = $deskSegment;
+
+      if ($data['desk']) {
+        $desk_id = $data['desk']->id;
+        $data['pages'] = $this->model->page->getPagesByDeskId($desk_id);
+      } else {
+        $data['desk'] = null;
+        $data['pages'] = null;
+      }
+      
+      $this->view->render('pages/one-desk', $data);
+    }
+    
+  }
+
+  public function showCard() {
+    $username = $this->route['username'];
+    $deskSegment = $this->route['segment'];
+    $userFromDB = $this->data['user'];
+
+    $data['username'] = $username;  
+
+    if ($username !== $userFromDB->username) {
+      $this->view->render('pages/user-not-exists', $data);
+    } else {
+      $this->load->model('Desk');
+      $this->load->model('Page');
+
+      $data['user'] = $this->data['user'];
+      $user_id = $data['user']->id;
+      $data['desks'] = $this->model->desk->getDesksByUserId($user_id);
+      $data['desk'] = $this->model->desk->getDesk($deskSegment, $user_id);
+      $data['segment'] = $deskSegment;
+
+      if ($data['desk']) {
+        $desk_id = $data['desk']->id;
+        $data['pages'] = $this->model->page->getPagesByDeskId($desk_id);
+      } else {
+        $data['desk'] = null;
+        $data['pages'] = null;
+      }
+      
+      $this->view->render('pages/one-desk', $data);
+    }
+    
+  }
+
   public function showMyFriends() {
     $username = $this->route['username'];
     $userFromDB = $this->data['user'];

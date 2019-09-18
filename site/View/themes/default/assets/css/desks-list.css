@@ -6,3 +6,48 @@
 .desks-list__item {
   width: 100%;
 }
+
+.desks-list__list {
+  padding: 0;
+  list-style: none;
+}
+
+.desks-list__list li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.desks-list__current-label {
+  position: absolute;
+  top: 50%;
+  left: -32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-top: -20px;
+  display: none;
+}
+
+.desks-list__list li.is-active .desks-list__current-label {
+  display: block;
+}
+
+.desks-list__list li.is-active {
+  padding-left: 15px;
+}
+
+.desks-list__list li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.desks-list__header {
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 20px;
+}

@@ -14,6 +14,9 @@ Asset::css('css/logo');
 Asset::css('css/profile-button');
 Asset::css('js/plugins/redactor/redactor');
 
+Asset::css('css/main-button');
+Asset::css('css/header-block');
+
 Asset::css('css/sidebar');
 Asset::css('css/grid');
 
