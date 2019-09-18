@@ -13,6 +13,7 @@
 .grid__main-header {
     display: flex;
     justify-content: center;
+    height: 130px;
 }
 
 .grid__main-header-text {

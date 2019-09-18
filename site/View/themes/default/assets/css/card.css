@@ -1,0 +1,36 @@
+.card {
+    padding-bottom: 100%;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.card__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.card__external-link {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+    border-bottom-left-radius: 40px;
+}
+
+.card__external-link:hover {
+    background-color: rgba(256, 256, 256, 0.2);
+}

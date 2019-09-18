@@ -1,0 +1,9 @@
+.pages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pages-list__item {
+  width: 200px;
+  padding: 20px 30px;
+}

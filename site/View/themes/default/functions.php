@@ -5,7 +5,7 @@ Asset::css('css/reset');
 Asset::css('css/global');
 Asset::css('css/hero');
 Asset::css('css/form');
-Asset::css('css/desks-list');
+
 Asset::css('css/desk-card');
 Asset::css('css/desk-page');
 Asset::css('css/page-card');
@@ -15,6 +15,9 @@ Asset::css('css/profile-button');
 Asset::css('js/plugins/redactor/redactor');
 
 Asset::css('css/main-button');
+Asset::css('css/desks-list');
+Asset::css('css/pages-list');
+Asset::css('css/card');
 Asset::css('css/header-block');
 
 Asset::css('css/sidebar');
