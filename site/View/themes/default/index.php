@@ -14,7 +14,7 @@
       $this->theme->block('shared/profile-button');
     ?>
     <div class="grid__content-scrollable">
-      <p>Hello! This is MyDesks App</p>
+      <p>Hello! This is LeftTab App</p>
     </div>
   </div>
 </div>

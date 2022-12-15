@@ -3,7 +3,7 @@
         
         <a href="/" class="logo">
             <img class="logo__img" src="<?=Asset::getUrl()?>img/logo.svg">
-            <span class="logo__text">MyDesks</span>
+            <span class="logo__text">LeftTab</span>
         </a>
     </div>
     <div class="sidebar__desks">
