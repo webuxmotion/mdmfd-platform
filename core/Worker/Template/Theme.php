@@ -81,7 +81,7 @@ class Theme {
     $theme = Config::item('defaultTheme');
 
     if (ENV === 'Site') {
-      $theme = Setting::get('active_theme');
+      $theme = 'default';
     }
 
     return path('view') . '/themes/' . $theme;

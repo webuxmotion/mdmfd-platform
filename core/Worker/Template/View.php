@@ -30,7 +30,7 @@ class View {
     $theme = Config::item('defaultTheme');
 
     if (ENV === 'Site') {
-      $theme = Setting::get('active_theme');
+      $theme = 'default';
     }
 
     $templatePath = path('view') . '/themes/' . $theme . DS . $template . '.php';
