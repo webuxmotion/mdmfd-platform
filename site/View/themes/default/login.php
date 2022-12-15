@@ -10,7 +10,7 @@
             </select>
         </div>
         <div class="hero__row">
-            <h1 class="hero__title">MDMFD</h1>
+            <h1 class="hero__title">LeftTab</h1>
         </div>
         <div class="hero__row">
             <p class="hero__description">Link Actualizing Platform</p>
