@@ -19,3 +19,7 @@ body {
 a {
     color: #0070c9;
 }
+
+.button {
+    padding: 20px;
+}

@@ -7,7 +7,7 @@ $( document ).ready(function() {
             el: document.querySelector('#editSection'),
             initialEditType: 'markdown',
             previewStyle: 'vertical',
-            height: '300px'
+            height: '500px'
         });
     
         markdownEditor.setValue( document.querySelector('#editorContent').innerHTML );

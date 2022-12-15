@@ -37,6 +37,12 @@
   fill: #3898e5;
 }
 
+.desk-page__top-fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media (max-width:800px) {
   .desk-page__page-item {
     width: 100%;
